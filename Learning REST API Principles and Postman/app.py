@@ -1,21 +1,19 @@
 from flask import Flask,jsonify,request,render_template
 
 app = Flask(__name__) #each file unique name
-stores=[
-	{
-		'name':"SayeeBookstore",
-		'items':[
-				{
-				'name':"Alchemist",
-				'price':15.99
-				}
-
+stores=
+		[
+			{
+				'name':"Bookstore",
+				'items':
+				[
+					{
+					'name':"Alchemist",
+					'price':15.99
+					}
+				]
+			}
 		]
-	}
-
-
-
-]
 
 
 @app.route('/')
@@ -23,8 +21,6 @@ def home():
 	return render_template('index.html')
 #post: receive data
 #get:use to send data
-
-
 #POST store name{name:}
 
 @app.route('/store',methods=['POST'])
